@@ -50,18 +50,9 @@ export default function Home(props: any) {
 
   }, [])
   async function connect() {
-    /*
-        const resourceId = {
-      baseUrl: 'http://localhost:3000',
-      path: '/protected',
-      orgId: "",
-      role: "",
-      extraData: id
-    }
-   
-    */
    
     const resourceId = {
+      //baseUrl: 'http://localhost:3000',
       baseUrl: 'https://nextjs-lit-gating-for-unity.vercel.app',
       path: '/protected',
       orgId: "",
