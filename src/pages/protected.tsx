@@ -174,7 +174,8 @@ export async function getServerSideProps({ req, res, query }) {
   console.log(verified)
   console.log(payload)
   if (
-    payload.baseUrl !== "http://localhost:3000"
+    //when in development set http://localhost:3000
+    payload.baseUrl !== "https://nextjs-lit-gating-for-unity.vercel.app"
     || payload.path !== '/protected'
     || payload.extraData !== id
   ) {
