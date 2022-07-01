@@ -15,7 +15,8 @@ async function initAndDecrypt(authSig: string | string[]) {
   await client.connect();
 
   console.log('STEP 1:INIT INITIAL PARAMETERS ')
-  const url = 'http://localhost:3000/unitybuild/2022.2/myunityapp.wasm.encrypted';
+  //const url = 'http://localhost:3000/unitybuild/2022.2/myunityapp.wasm.encrypted';
+  const url = 'https://nextjs-lit-gating-for-unity.vercel.app/unitybuild/2022.2/myunityapp.wasm.encrypted';
   const encryptedSymmetricKey = 'olsU7br0h/ZzOZfPq11x3Vzav7hmk9xX2O21BoXKBwsjdmlCJuo7MUQxR4g8hSUABoadIhPX0uYaoXb+XIM9iQnxUwY84UjtnknTVyPAVLyS8+y9JNUjy+FRKtJTE5mDXbyBoeFBi/M0BeOT89ICEoTj+lWZkeRqv3QBcQ+WziEAAAAAAAAAIE74fLiZzTrJMr67prKY9Js5Egi9rWLhubPch07KD6R2H2KKl78URNEHa5VWTN+ssA'
   const chain = 'mumbai'
   const accessControlConditions = [
