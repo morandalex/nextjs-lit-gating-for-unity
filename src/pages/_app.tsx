@@ -1,4 +1,4 @@
-
+import {useState} from 'react'
 import NextLink from 'next/link'
 import { UUIDContext } from '../context'
 import { useRouter } from 'next/router'
@@ -10,8 +10,13 @@ const id = uuid()
 //@ts-ignore
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
+
+
+const [authSig,setAuthSig] = useState('')
+
   function navigate() {
-    router.push(`/protected?id=${id}`)
+    //@ts-ignore
+    router.push(`/protected?id=${id}&authSig=${JSON.stringify(authSig)}`)
   }
   return (
     <UUIDContext.Provider value={{
@@ -50,7 +55,12 @@ function MyApp({ Component, pageProps }) {
             >
 
 
-              <Component {...pageProps} />
+              <Component 
+            
+           
+              setAuthSig={setAuthSig}
+              {...pageProps} 
+              />
 
 
             </Box>
@@ -62,5 +72,11 @@ function MyApp({ Component, pageProps }) {
 
   )
 }
-
+//MyApp.getInitialProps = async (appContext:any) => {
+  //   // calls page's `getInitialProps` and fills `appProps.pageProps`
+  //   const appProps = await App.getInitialProps(appContext);
+  //
+  //   return { ...appProps }
+   //}
 export default MyApp
+
