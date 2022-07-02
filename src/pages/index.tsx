@@ -1,55 +1,18 @@
 import { useState, useContext, useEffect } from 'react'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+
 //@ts-ignore
 import JSCookies from 'js-cookie'
 import { UUIDContext } from '../context'
-//@ts-ignore
-import Cookies from 'cookies'
+
 import { Box, Heading, Button, Link, VStack, Text } from '@chakra-ui/react'
 
 import Layout from '../components/layout/Layout'
 
 //@ts-ignore
 import LitJsSdk from 'lit-js-sdk'
-import { toString as uint8arrayToString } from "uint8arrays/to-string";
-import { fromString as uint8arrayFromString } from "uint8arrays/from-string";
+import { chain, accessControlConditions, baseUrl } from '../lib/config';
 
 
-
-const chain = 'mumbai';
-
-const accessControlConditions = [
-  {
-    contractAddress: '',
-    standardContractType: '',
-    chain,
-    method: 'eth_getBalance',
-    parameters: [':userAddress', 'latest'],
-    returnValueTest: {
-      comparator: '>=',
-      value: '100000000',  // 0.000001 ETH
-    },
-  },
-]
-
-/*const accessControlConditions = [
-  {
-    contractAddress: '0x25ed58c027921E14D86380eA2646E3a1B5C55A8b',
-    standardContractType: 'ERC721',
-    chain: 'mumbai',
-    method: 'balanceOf',
-    parameters: [
-      ':userAddress'
-    ],
-    returnValueTest: {
-      comparator: '>',
-      value: '0'
-    }
-  }
-]
-*/
 
 export default function Home(props: any) {
   const [connected, setConnected] = useState(false)
@@ -71,8 +34,8 @@ export default function Home(props: any) {
   async function connect() {
 
     const resourceId = {
-      //baseUrl: 'http://localhost:3000',
-      baseUrl: 'https://nextjs-lit-gating-for-unity.vercel.app',
+      baseUrl: baseUrl,
+      //baseUrl: 'https://nextjs-lit-gating-for-unity.vercel.app',
       path: '/protected',
       orgId: "",
       role: "",
@@ -101,9 +64,7 @@ export default function Home(props: any) {
     setConnected(true)
 
   }
-
   return (
-
     <>
       <VStack>
         <Heading as='h3'>Connect to see unity app</Heading>
@@ -111,16 +72,8 @@ export default function Home(props: any) {
         {
           !connected ? <Button variant='solid' onClick={connect}>Connect</Button> : <Text>Now you can click on protected path link at the bottom</Text>
         }<br></br>
-
-
-
       </VStack>
-
-
     </>
-
-
-
   )
 }
 

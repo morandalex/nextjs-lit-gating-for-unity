@@ -1,13 +1,13 @@
+// THIS IS A WORKING EXAMPLE - IT IS STILL NOT WORKING BUT 
+// IT IS HERE FOR FUTURE REFERENCE IF IN THE FUTURE 
+// YOU WANT TO USE NEXJS MIDDLEWARE AND NOT A EXPRESS SERVER
 
-import stream from 'stream';
-import { promisify } from 'util';
 import { NextApiRequest, NextApiResponse } from "next";
 import { Blob } from 'buffer'
 //@ts-ignore
 import LitJsSdk from 'lit-js-sdk'
-import { fromString as uint8arrayFromString } from "uint8arrays/from-string";
-const pipeline = promisify(stream.pipeline);
 
+import {baseUrl,unityBuildPath,chain,accessControlConditions,encryptedSymmetricKey} from '../../lib/config';
 
 async function initAndDecrypt(authSig: string | string[]) {
   console.log('STEP 0: INITIALIZE lit SDK')
@@ -15,28 +15,7 @@ async function initAndDecrypt(authSig: string | string[]) {
   await client.connect();
 
   console.log('STEP 1:INIT INITIAL PARAMETERS ')
-  //const url = 'http://localhost:3000/unitybuild/2022.2/myunityapp.wasm.encrypted';
-  const url = 'https://nextjs-lit-gating-for-unity.vercel.app/unitybuild/2022.2/myunityapp.wasm.encrypted';
-  const encryptedSymmetricKey = 'olsU7br0h/ZzOZfPq11x3Vzav7hmk9xX2O21BoXKBwsjdmlCJuo7MUQxR4g8hSUABoadIhPX0uYaoXb+XIM9iQnxUwY84UjtnknTVyPAVLyS8+y9JNUjy+FRKtJTE5mDXbyBoeFBi/M0BeOT89ICEoTj+lWZkeRqv3QBcQ+WziEAAAAAAAAAIE74fLiZzTrJMr67prKY9Js5Egi9rWLhubPch07KD6R2H2KKl78URNEHa5VWTN+ssA'
-  const chain = 'mumbai'
-  const accessControlConditions = [
-    {
-      contractAddress: '',
-      standardContractType: '',
-      chain,
-      method: 'eth_getBalance',
-      parameters: [':userAddress', 'latest'],
-      returnValueTest: {
-        comparator: '>=',
-        value: '100000000',  // 0.000001 ETH
-      },
-    },
-  ]
-
-
-
-
-
+  const url = baseUrl+unityBuildPath+"/myunityapp.wasm.encrypted";
 
 
   console.log('STEP 2: GET ENCRYPTED BASE64 OF WASM FILE')
@@ -48,7 +27,7 @@ async function initAndDecrypt(authSig: string | string[]) {
   console.log('STEP 3: GET THE UINTARRAY OF ENCRYPTED SYMMETRIC KEY')
 
 
-  const check = uint8arrayFromString(
+  const check = LitJsSdk.uint8arrayFromString(
     encryptedSymmetricKey,
     "base64"
   );
@@ -70,7 +49,7 @@ async function initAndDecrypt(authSig: string | string[]) {
   })
 
 console.log(typeof encrypted)
-  const arrayBuffer: ArrayBuffer = uint8arrayFromString(
+  const arrayBuffer: ArrayBuffer = LitJsSdk.uint8arrayFromString(
     encrypted,
     "base64"
   ).buffer;
@@ -86,7 +65,7 @@ console.log(typeof encrypted)
     symmetricKey
   );
 
-//   console.log('DECRYPTED :', decryptedString.substring(0, 20))
+   console.log('DECRYPTED :', decryptedString.substring(0, 20))
 
 
 }
