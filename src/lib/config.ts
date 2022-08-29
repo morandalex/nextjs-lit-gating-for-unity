@@ -1,7 +1,7 @@
 //https://nextjs-lit-gating-for-unity.vercel.app
 export const baseUrl = 'http://localhost:3000'; // go to root directory then yarn dev or yarn start
 
-export const serverBaseUrl = 'http://localhost:8081'; // go to server directory and then yarn start
+export const serverBaseUrl = 'http://localhost:8091'; // go to server directory and then yarn start
 
 export const unityBuildPath = 'unitybuild/2022.2/';
 export const unityBuildDataPath = 'unitybuild/2022.2/';
