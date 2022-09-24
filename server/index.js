@@ -13,7 +13,7 @@ const corsOptions = {
 console.log('STEP 1:INIT INITIAL PARAMETERS ')
 const encryptedSymmetricKey = process.env.NEXT_PUBLIC_ENCRYPTED_SYMMETRIC_KEY_OF_WASM_FILE
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
-const url = baseUrl+'/unitybuild/2022.10/myunityapp.wasm.encrypted';
+const url = baseUrl+'/unitybuild/'+process.env.NEXT_PUBLIC_UNITY_BUILD_FOLDER+'/myunityapp.wasm.encrypted';
 const chain = "mumbai";
 const accessControlConditions = [
   {

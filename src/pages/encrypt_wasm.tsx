@@ -21,7 +21,7 @@ import {
 import { Spinner } from '@chakra-ui/react'
 //@ts-ignore
 import { saveAs } from 'file-saver';
-
+import { chain, accessControlConditions, baseUrl } from '../lib/config';
 
 //@ts-ignore
 import LitJsSdk from 'lit-js-sdk'
@@ -56,20 +56,8 @@ export default function DoctorAdd() {
 
 
   }, [])
-  const chain = 'mumbai'
-  const accessControlConditions = [
-    {
-      contractAddress: '',
-      standardContractType: '',
-      chain,
-      method: 'eth_getBalance',
-      parameters: [':userAddress', 'latest'],
-      returnValueTest: {
-        comparator: '>=',
-        value: '100000000',  // 0.000001 ETH
-      },
-    },
-  ]
+
+
   const encrypt = async () => {
 
     setLoading(true)
@@ -125,7 +113,7 @@ export default function DoctorAdd() {
 
   const decrypt = async () => {
 
-    const chain = 'mumbai';
+   // const chain = 'mumbai';
 
 
 

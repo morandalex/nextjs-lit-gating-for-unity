@@ -3,8 +3,8 @@
 export const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
 export const serverBaseUrl = process.env.NEXT_PUBLIC_EXPRESS_URL; // go to server directory and then yarn start
 
-export const unityBuildPath = 'unitybuild/2022.10/';
-export const unityBuildDataPath = 'unitybuild/2022.10/';
+export const unityBuildPath = 'unitybuild/'+process.env.NEXT_PUBLIC_UNITY_BUILD_FOLDER+'/';
+//export const unityBuildDataPath = 'unitybuild/';
 export const chain = 'mumbai'
 export const accessControlConditions = [
     {

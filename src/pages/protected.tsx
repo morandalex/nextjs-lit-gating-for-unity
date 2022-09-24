@@ -9,7 +9,7 @@ import Head from 'next/head'
 import { VStack, Button, Text, Heading } from '@chakra-ui/react'
 
 import { Unity, useUnityContext } from "react-unity-webgl";
-import {baseUrl,serverBaseUrl,unityBuildPath,unityBuildDataPath} from '../lib/config';
+import {baseUrl,serverBaseUrl,unityBuildPath} from '../lib/config';
 
 export default function Protected(props: any) {
   const unityFileName = 'myunityapp';
@@ -18,9 +18,10 @@ export default function Protected(props: any) {
     productName: "Unity WebGL Tests",
     companyName: "",
   
-    dataUrl: unityBuildDataPath+"/myunityapp.data",
+    dataUrl: unityBuildPath+"/myunityapp.data",
     loaderUrl: unityBuildPath+"/myunityapp.loader.js",
     frameworkUrl: unityBuildPath+"myunityapp.framework.js",
+    
     codeUrl: serverBaseUrl+"/decrypt?authSig="+JSON.stringify(props.authSig), // wasm file firectory
 
     webglContextAttributes: {
