@@ -3,8 +3,8 @@ export const baseUrl = 'http://localhost:3000'; // go to root directory then yar
 
 export const serverBaseUrl = 'http://localhost:8091'; // go to server directory and then yarn start
 
-export const unityBuildPath = 'unitybuild/2022.2/';
-export const unityBuildDataPath = 'unitybuild/2022.2/';
+export const unityBuildPath = 'unitybuild/2022.10/';
+export const unityBuildDataPath = 'unitybuild/2022.10/';
 export const chain = 'mumbai'
 export const accessControlConditions = [
     {
@@ -36,7 +36,7 @@ export const accessControlConditions = [
 ]
 */
 
-export const encryptedSymmetricKey = 'olsU7br0h/ZzOZfPq11x3Vzav7hmk9xX2O21BoXKBwsjdmlCJuo7MUQxR4g8hSUABoadIhPX0uYaoXb+XIM9iQnxUwY84UjtnknTVyPAVLyS8+y9JNUjy+FRKtJTE5mDXbyBoeFBi/M0BeOT89ICEoTj+lWZkeRqv3QBcQ+WziEAAAAAAAAAIE74fLiZzTrJMr67prKY9Js5Egi9rWLhubPch07KD6R2H2KKl78URNEHa5VWTN+ssA'
+export const encryptedSymmetricKey = '4/FIlIsYvrfZ80vO2msUjHl10+FAxxcUMEj8IRAfaJLdR6d4MSkQvHRxqnkbn04F1dKiut8fjHrDthC7EJ/Ahdy9S4KClESrlYypbhThRaJK+BhE+suEzEIGYUo/QuKZ3UNKF7Y+jsD0+ufkvNmMc3Q1uqYsd2a5H5kqs6DuCFEAAAAAAAAAIDHLkrMF84egvkmQpSQ1ypLTarRaothUkSVISCeap/3zklNCsGx3Q3WRm/lI11jSkA'
   
 //  import {baseUrl,serverBaseUrl,unityBuildPath,unityBuildDataPath,chain,accessControlConditions,encryptedSymmetricKey} from '../lib/config';
 

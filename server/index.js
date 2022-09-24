@@ -10,9 +10,9 @@ const corsOptions = {
 
 ///////////SETUP SERVER/////////////////////////////
 console.log('STEP 1:INIT INITIAL PARAMETERS ')
-const encryptedSymmetricKey = 'XaVTH379owhn8X62DzOcIXaT/kRYevD5RneArVK3ZnSyjw15ElU0ku9Ic4GD/EcBQ+jHwnbSsIlSmsxAQjvnwcGcmVmmuGSP4mVTdYa6sCYbkUtdi0oUKk7IIkuyFHaH6iDdWlYi/rUE7AnpEJvfJ66V9l3fdW9uHk87dnd4BKUAAAAAAAAAIFgFz0fwUPEbYYURVpI1JD5R3311xqsh5myPMXkQE1IM30wxOJ5Q8kQjyVTMXtirrg'
+const encryptedSymmetricKey = '4/FIlIsYvrfZ80vO2msUjHl10+FAxxcUMEj8IRAfaJLdR6d4MSkQvHRxqnkbn04F1dKiut8fjHrDthC7EJ/Ahdy9S4KClESrlYypbhThRaJK+BhE+suEzEIGYUo/QuKZ3UNKF7Y+jsD0+ufkvNmMc3Q1uqYsd2a5H5kqs6DuCFEAAAAAAAAAIDHLkrMF84egvkmQpSQ1ypLTarRaothUkSVISCeap/3zklNCsGx3Q3WRm/lI11jSkA'
 const baseUrl = 'http://localhost:3000'
-const url = baseUrl+'/unitybuild/2022.2/myunityapp.wasm.encrypted';
+const url = baseUrl+'/unitybuild/2022.10/myunityapp.wasm.encrypted';
 const chain = "mumbai";
 const accessControlConditions = [
   {

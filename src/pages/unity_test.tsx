@@ -14,11 +14,11 @@ export default function Protected(props: any) {
     companyName: "Jeffrey Lanters",
     // The url's of the Unity WebGL runtime, these paths are public and should be
     // accessible from the internet and relative to the index.html.
-    loaderUrl: "unitybuild/2022.1/myunityapp.loader.js",
-    dataUrl: "unitybuild/2022.1/myunityapp.data",
-    frameworkUrl: "unitybuild/2022.1/myunityapp.framework.js",
-    codeUrl: "unitybuild/2022.1/myunityapp.wasm",
-    streamingAssetsUrl: "unitybuild/2022.1/streamingassets",
+    loaderUrl: "unitybuild/2022.10/myunityapp.loader.js",
+    dataUrl: "unitybuild/2022.10/myunityapp.data",
+    frameworkUrl: "unitybuild/2022.10/myunityapp.framework.js",
+    codeUrl: "unitybuild/2022.10/myunityapp.wasm",
+    //streamingAssetsUrl: "unitybuild/2022.10/streamingassets",
     // Additional configuration options.
     webglContextAttributes: {
       preserveDrawingBuffer: true,
