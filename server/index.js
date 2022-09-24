@@ -1,8 +1,9 @@
+require('dotenv').config();
 var express = require("express");
 var LitJsSdk = require("lit-js-sdk/build/index.node.js");
 var cors = require('cors')
 var app = express();
-const whiteList = ["http://localhost:3000"];
+const whiteList = [process.env.NEXT_PUBLIC_BASE_URL];
 const corsOptions = {
   credentials: true,
   origin: whiteList
@@ -10,8 +11,8 @@ const corsOptions = {
 
 ///////////SETUP SERVER/////////////////////////////
 console.log('STEP 1:INIT INITIAL PARAMETERS ')
-const encryptedSymmetricKey = '4/FIlIsYvrfZ80vO2msUjHl10+FAxxcUMEj8IRAfaJLdR6d4MSkQvHRxqnkbn04F1dKiut8fjHrDthC7EJ/Ahdy9S4KClESrlYypbhThRaJK+BhE+suEzEIGYUo/QuKZ3UNKF7Y+jsD0+ufkvNmMc3Q1uqYsd2a5H5kqs6DuCFEAAAAAAAAAIDHLkrMF84egvkmQpSQ1ypLTarRaothUkSVISCeap/3zklNCsGx3Q3WRm/lI11jSkA'
-const baseUrl = 'http://localhost:3000'
+const encryptedSymmetricKey = process.env.NEXT_PUBLIC_ENCRYPTED_SYMMETRIC_KEY_OF_WASM_FILE
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
 const url = baseUrl+'/unitybuild/2022.10/myunityapp.wasm.encrypted';
 const chain = "mumbai";
 const accessControlConditions = [

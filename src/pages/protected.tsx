@@ -15,8 +15,8 @@ export default function Protected(props: any) {
   const unityFileName = 'myunityapp';
 
   const { unityProvider } = useUnityContext({
-    productName: "Christian O Connor - Unity WebGL Tests",
-    companyName: "Christian O Connor",
+    productName: "Unity WebGL Tests",
+    companyName: "",
   
     dataUrl: unityBuildDataPath+"/myunityapp.data",
     loaderUrl: unityBuildPath+"/myunityapp.loader.js",
